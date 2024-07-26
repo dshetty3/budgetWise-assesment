@@ -36,13 +36,7 @@
   gap: 1rem;
 }
 
-.dropdown-arrow {
-  width: 0;
-  height: 0;
-  border-top: 5px solid black;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-}
+
 
 .category{
   margin-right: 14rem;
@@ -192,10 +186,7 @@
 }
 
 @media (max-width: 768px) {
-  #main-panel {
-    margin: 0px 60px 0px 15rem
-  }
-
+  
   .budgetwise-logo span{
     display: none;
   }

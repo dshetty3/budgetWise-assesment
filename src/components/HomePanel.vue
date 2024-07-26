@@ -19,11 +19,11 @@
     <budget-add v-if="showPopup" :categories="categories" @add-budget="handleAddBudget" @close-popup="hidePopUp"></budget-add>
 
     <select v-model="selectedMonth" class="month">
-      <span class="dropdown-arrow"></span>
-
-      <option value="" disabled selected>Month</option>
+      <option value="" disabled selected hidden>Month</option>
       <option v-for="month in months" :key="month" :value="month">{{ month }}</option>
     </select>
+    <span class="dropdown-arrow">{{ selectedMonth ? '▲' : '▼' }}</span>
+  
 
     <h2 class="category">
       Categories
@@ -222,6 +222,11 @@ export default {
   
 }
 
+.fa-ellipsis-vertical{
+  cursor: pointer;
+
+}
+
 .month {
   margin-right: 12rem;
   font-family: Outfit;
@@ -237,6 +242,9 @@ export default {
   width: 175px;
   height: 45px;
   text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .category-scrollview{
@@ -284,6 +292,22 @@ export default {
 
 #green{
   text-align: right;
+}
+
+.dropdown-arrow {
+    position: relative;
+    margin-top: -22px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    margin-right: 70px;
+    color: #53bd71;
+}
+
+@media (max-width: 768px) {
+  #main-panel {
+    margin: 0px 60px 0px 200px
+  }
 }
 
 </style>

@@ -1,25 +1,63 @@
 <template>
-
-        <div class="left-sidebar">
-          <ul class= "sidebar">
-            <li><a  href="#" class="overview">Overview</a></li>
-            <li><a  href="#" class="budget">Budget</a></li>
-            <li><a  href="#" class="transactions">Transactions</a></li>
-            <li><a  href="#" class="trends">Trends</a></li>
-            <li><a  href="#" class="savings">Savings Goals</a></li>
-            <li><a  href="#" class="alerts">Alerts</a></li>
-          </ul>
-        </div>
+  <div class="left-sidebar">
+    <ul class="sidebar">
+      <li>
+        <a
+          href="#" :class="{ active: activeItem === 'overview' }" @click.prevent="toggleActive('overview')">
+          Overview
+        </a>
+      </li>
+      <li>
+        <a
+          href="#" :class="{ active: activeItem === 'budget' }" @click.prevent="toggleActive('budget')">
+          Budget
+        </a>
+      </li>
+      <li>
+        <a
+          href="#" :class="{ active: activeItem === 'transactions' }" @click.prevent="toggleActive('transactions')">
+          Transactions
+        </a>
+      </li>
+      <li>
+        <a
+          href="#" :class="{ active: activeItem === 'trends' }" @click.prevent="toggleActive('trends')">
+          Trends
+        </a>
+      </li>
+      <li>
+        <a
+          href="#" :class="{ active: activeItem === 'savings' }" @click.prevent="toggleActive('savings')">
+          Savings Goals
+        </a>
+      </li>
+      <li>
+        <a href="#" :class="{ active: activeItem === 'alerts' }" @click.prevent="toggleActive('alerts')">
+          Alerts
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
+
 <script>
 export default {
   name: 'NavigationSide',
- 
+  data() {
+    return {
+      activeItem: 'overview', 
+    };
+  },
+  methods: {
+    toggleActive(item) {
+      this.activeItem = item; 
+    },
+  },
 };
 </script>
 
 <style scoped>
-.left-sidebar{
+.left-sidebar {
   max-height: 100%;
   overflow: hidden;
   position: fixed;
@@ -40,22 +78,21 @@ export default {
   white-space: nowrap;
 }
 
-.overview {
-  color: unset;
-}
-
-a{
-cursor: pointer;
-  font-size: 14px;
-  color: #000;
-  text-decoration: none;
+a {
+  cursor: pointer;
   font-size: 20px;
+  color: #707070;
+  text-decoration: none;
   position: relative;
   font-weight: 400;
-  color: #707070;
+  transition: color 0.3s;
 }
 
-.sidebar a.overview:before {
+a.active {
+  color: #2b2b2b;
+}
+
+.sidebar a.active:before {
   content: "";
   width: 3px;
   height: 100%;

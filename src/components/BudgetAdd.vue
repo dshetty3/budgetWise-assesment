@@ -50,6 +50,11 @@
           this.message = "Please fill in all the necessary fields.";
           return;
         }
+        if (this.budgetForm.spent > this.budgetForm.total) {
+          this.message = "Total should be greater than Spent.";
+          return;
+        }
+
   
         this.$emit('add-budget', { ...this.budgetForm });
         

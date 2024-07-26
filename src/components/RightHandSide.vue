@@ -36,43 +36,51 @@
     </div>
 
     <br />
-    <div class="recent">
-      <div class="recent-transactions">Recent Transactions</div>
-      <div class="see-all">See all</div>
-      <br /><br />
-    </div>
-    <div class="view">
-      <div class="purchased-card" v-for="list in purchasedList" :key="list.label" style="cursor: pointer" >
-        <div class="minimal-info">
-          <div class="left">
-            <div class="icon">
-              <div style=" position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div
-                  style=" position: relative; display: flex; justify-content: center; align-items: center; ">
-                  <div id="middle-circle1">
-                    <img :src="list.image" alt="icon" />
-                  </div>
-                  <div id="progress-spinner" :style="{ 'background-color': list.hex }"></div>
+  <div class="recent">
+    <div class="recent-transactions">Recent Transactions</div>
+    <div class="see-all" @click="toggleView">{{ isViewVisible ? 'See None' : 'See all' }}</div>
+    <br /><br />
+  </div>
+  <div class="view" v-if="isViewVisible">
+    <div
+      class="purchased-card"
+      v-for="list in purchasedList"
+      :key="list.label"
+      style="cursor: pointer"
+    >
+      <div class="minimal-info">
+        <div class="left">
+          <div class="icon">
+            <div
+              style="position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column;"
+            >
+              <div
+                style="position: relative; display: flex; justify-content: center; align-items: center;"
+              >
+                <div id="middle-circle1">
+                  <img :src="list.image" alt="icon" />
                 </div>
+                <div id="progress-spinner" :style="{ 'background-color': list.hex }"></div>
               </div>
             </div>
-            <div class="info">
-              <div id="title">
-                <span>{{ list.label }}</span>
-              </div>
-              <div class="additional">{{ list.sublabel }}</div>
+          </div>
+          <div class="info">
+            <div id="title">
+              <span>{{ list.label }}</span>
             </div>
+            <div class="additional">{{ list.sublabel }}</div>
           </div>
-          <div class="right" style="white-space: nowrap">
-            <span id="amount1" style="color: rgb(3, 6, 8)">${{ list.cost }}</span>
-            <span id="date">{{ list.date }}</span>
-          </div>
-          <div class="right2">
-            <i class="fa-solid fa-angle-right" style="margin-right: -20px"></i>
-          </div>
+        </div>
+        <div class="right" style="white-space: nowrap">
+          <span id="amount1" style="color: rgb(3, 6, 8)">${{ list.cost }}</span>
+          <span id="date">{{ list.date }}</span>
+        </div>
+        <div class="right2">
+          <i class="fa-solid fa-angle-right" style="margin-right: -20px"></i>
         </div>
       </div>
     </div>
+  </div>
 
     <br />
     <div class="recent">Bank & Credit Cards</div>
@@ -137,6 +145,7 @@ export default {
   },
   data() {
     return {
+      isViewVisible: false,
       bankImage: require('@/assets/BOA.png'),
       purchasedList: [
         { label: "Cold Brew", hex: 'rgb(8, 29, 149)', image: 'https://budgetwise.co/img/gift.811ce353.svg', sublabel: 'Starbucks', cost: '5.92', date: '03-30-2022' },
@@ -158,6 +167,9 @@ export default {
     }
   },
   methods: {
+    toggleView() {
+      this.isViewVisible = !this.isViewVisible;
+    },
     renderCharts() {
       if (this.myBarChart) {
         this.myBarChart.destroy();
@@ -599,5 +611,11 @@ export default {
 
 #amount1{
   color: #53bd71;
+}
+
+@media (max-width: 768px) {
+  #rhs{
+    display: none;
+  }
 }
 </style>
