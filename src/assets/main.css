@@ -1,0 +1,208 @@
+@import './base.css';
+
+#app {
+  font-family: Outfit;
+  text-align: center;
+  color: #2c3e50;
+  height: 100%;
+  width: 101.5vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.minimal-info1 {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* body*/
+/*sidebar*/
+
+.body{
+  display: flex;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.selected {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+.dropdown-arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid black;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.category{
+  margin-right: 14rem;
+}
+
+.left {
+  display: flex;
+  column-gap: 10px;
+  
+}
+
+.left-side{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icon #middle-circle{
+  position: absolute;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: 700;
+  
+}
+.icon #middle-circle1{
+  position: absolute;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: 700;
+}
+
+.icon #progress-spinner {
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+}
+
+.info {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+#amount,#title {
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 135%;
+  width: 100%;
+  text-align: left;
+  //letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.additional {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+
+.additional span {
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: left;
+  color: #707070;
+}
+
+
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+
+//button pop up
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+
+/* #main-panel,#community-panel, #faqs-panel {
+  display: none;
+} */
+
+
+#community-panel, #faqs-panel{
+  display: flex;
+  height: 100%;
+  font-size: 19px;
+  position: fixed;
+  box-sizing: border-box;
+ align-items: center;
+ width: 50%;
+ margin: -10rem 15rem ;
+ z-index: 1;
+}
+
+
+.snapshot{
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+
+.transaction{
+  width: 90%;
+  height: 20px;
+  padding: 32px 40px;
+  border: 0.01px solid #000;
+  border-radius: 20px;
+  margin: 2rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #main-panel {
+    margin: 0px 60px 0px 15rem
+  }
+
+  .budgetwise-logo span{
+    display: none;
+  }
+
+  .account{
+    margin-left: 50px;
+  }
+
+ 
+}
