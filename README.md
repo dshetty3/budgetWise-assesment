@@ -15,7 +15,7 @@ This assessment is only for Divercity.io
 
 
 ## Demo
-<img src="./BudgetWise-Web.gif" alt="Demo GIF" width="900"/>
+<img src="./budgetWise.gif" alt="Demo GIF" width="900"/>
 
 ## Features
 - **Vue.js:** Framework used to develop the website using HTML, CSS and Javascript. Main menu on click of Month April 2023, will display all the budget for the month.
