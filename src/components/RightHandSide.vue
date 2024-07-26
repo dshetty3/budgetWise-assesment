@@ -52,11 +52,8 @@
         <div class="left">
           <div class="icon">
             <div
-              style="position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column;"
-            >
-              <div
-                style="position: relative; display: flex; justify-content: center; align-items: center;"
-              >
+              style="position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <div style="position: relative; display: flex; justify-content: center; align-items: center;">
                 <div id="middle-circle1">
                   <img :src="list.image" alt="icon" />
                 </div>
@@ -251,7 +248,7 @@ export default {
           display: false,
         },
         ticks: {
-          color: "#000", // Color of x-axis labels
+          color: "#000", 
         },
       },
       y: {
@@ -260,7 +257,7 @@ export default {
           display: false,
         },
         ticks: {
-          color: "#000", // Color of y-axis labels
+          color: "#000", 
           callback: function (value) {
             if (value >= 1500) {
               return (value / 1000).toFixed(1) + "k";
@@ -275,7 +272,7 @@ export default {
         display: true,
         position: "bottom",
         labels: {
-          color: "#333", // Font color for legend labels
+          color: "#333", 
           usePointStyle: true,
           borderRadius: 1,
           boxWidth: 30,
@@ -409,7 +406,6 @@ export default {
         },
       });
 
-      // Add additional text
       document.getElementById('additionalText').innerText = "Total Savings: $300 of $3,000";
       document.getElementById('additionalText1').innerText = "by April 15, 2023";
     },
