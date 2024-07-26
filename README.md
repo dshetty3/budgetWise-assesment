@@ -19,35 +19,34 @@ This assessment is only for Divercity.io
 
 ## Features
 - **Vue.js:** Framework used to develop the website using HTML, CSS and Javascript. Main menu on click of Month April 2023, will display all the budget for the month.
-- **Chart.js:** The right hand side section is developed using chart.js.
+- **Chart.js:** The right hand side section is developed using chart.js. Click on See all to check Recent Transactions.
 - **Optional- Add Gas on click of plus sign:** Implemented the add-on budget functionality for Gas.
 
 ## Getting Started
 To run this project locally, follow these steps:
 
 
-1. Create folder and copy all the contents for e.g. Diversity.IO:
+1. Create folder and copy all the contents:
    ```bash
-      https://github.com/dshetty3/BudgetWise.io.git
+      https://github.com/dshetty3/budgetWise-assesment.git
    
 2. Go the the directory
    ```bash
-    cd diversity.io
+    cd budgetWise-assesment
 
-3. Open the index.html file in your preferred web browser.
 
-4. Run following commands:
-   Install Vue
+3. Run following commands:
+   Install Vue - Make sure you have npm or yarn installed 
    ```bash
    npm install -g vue
    
-5. Build application
+4. Build application
    ```bash
    npm build
 
-6.  Run application
+5.  Run application - I prefer npm run serve
     ```bash 
-    npm start/ npm run dev
+    npm start/ npm run dev/ npm run serve
 
 ## Install Chart.js
 Install Chart.js, to dispplay the RHS of the site.
